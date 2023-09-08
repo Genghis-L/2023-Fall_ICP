@@ -17,7 +17,9 @@ else:
     if distance < 230000:  # To check whether it is Super
         print("Super", end=" ")
         flag = 1
-    if date == (29 or 30 or 31):  # To check whether it is Blue
+    if date == 29 or date == 30 or date==31:  # To check whether it is Blue
+    # We can also use tuple here: 
+    # if date in (29,30,31):
         print("Blue", end=" ")
         flag = 1
     if eclipse == True:  # To check whether it is Blood
