@@ -1,5 +1,6 @@
 # HW4 - Ex1: Word statistics
 
+# Section 1: Getting Valid Input of Word Number
 """ # A concise way to check the validity of the input
     
     while (n := int(input("How many words will you enter? > "))) not in range(3, 7):
@@ -22,6 +23,8 @@ while flag == False:
     else:
         flag = True  # If the number is valid
 
+
+# Section 2: Inputting Words & Calculation
 word = input("Word #1 please > ")  # Input the first word
 L_word = word  # Set the initial longest word
 S_word = word  # Set the initial shortest word
@@ -37,6 +40,8 @@ for i in range(2, num_words + 1):  # Start inputing words from the second to the
 
 Ave_word = Sum_len / num_words  # Calculate the average length of words
 
+
+# Section 3: Printing out Longest/Shortest Words and Average Length
 print(f"Shortest: {S_word}")
 print(f"Longest: {L_word}")
 print(
