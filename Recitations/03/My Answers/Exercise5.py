@@ -1,4 +1,6 @@
-# Hot Dog Cookout Calculator
+# Copyright 2023 Genghis, 骆可瀚, kl4747@nyu.edu
+
+# Exercise 5 - (Gaddis 3.8) - Hot Dog Cookout Calculator
 # 1 hotdog = 1 hotdog (sausage) + 1 hot dog bun (bread)
 
 people = int(input("Please input the number of people attending the cookout: >"))

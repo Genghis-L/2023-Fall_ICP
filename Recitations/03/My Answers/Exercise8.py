@@ -1,4 +1,6 @@
-# Time Calculator
+# Copyright 2023 Genghis, 骆可瀚, kl4747@nyu.edu
+
+# Exercise 8 - (Gaddis 3.15) - Time Calculator
 
 time = float(input("Please input your time(postive float number): >"))
 

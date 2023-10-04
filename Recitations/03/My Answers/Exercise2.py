@@ -1,12 +1,14 @@
-# Age Classifier
+# Copyright 2023 Genghis, 骆可瀚, kl4747@nyu.edu
 
-a = int(input("Please input your name: >"))
+# Exercise 2 - (Gaddis 3.3) - Age Classiﬁer
 
-if a <= 1:
+age = int(input("Please input a person's age: >"))
+
+if age <= 1:
     print("This person is an infant. ")
-elif a < 13:
+elif age < 13:
     print("This person is a child. ")
-elif a < 20:
+elif age < 20:
     print("This person is a teenager. ")
 else:
     print("This person is an adult. ")

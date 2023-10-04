@@ -1,16 +1,18 @@
-# Roulette Wheel Colors
+# Copyright 2023 Genghis, 骆可瀚, kl4747@nyu.edu
 
-n = int(input("Please input a pocket number: >"))
-if n not in range(0, 37):
+# Exercise 6 - (Gaddis 3.9) - Roulette Wheel Colors
+
+pocket_num = int(input("Please input a pocket number: >"))
+if pocket_num not in range(0, 37):
     print("Please give a right pocket number again. ")
 else:
-    if n == 0:
+    if pocket_num == 0:
         print("The pocket is green. ")
     elif (
-        n in range(1, 11, 2)
-        or n in range(12, 19, 2)
-        or n in range(19, 29, 2)
-        or n in range(30, 37, 2)
+        pocket_num in range(1, 11, 2)
+        or pocket_num in range(12, 19, 2)
+        or pocket_num in range(19, 29, 2)
+        or pocket_num in range(30, 37, 2)
     ):
         print("The pocket is red. ")
     else:
