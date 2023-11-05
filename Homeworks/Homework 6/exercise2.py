@@ -17,6 +17,21 @@ def valid_username(user, L):
     2. Returns if the username is valid → type bool
     """
     # WRITE YOUR CODE BELOW
+    if (
+        len(user) >= 4
+        and user.isalnum()
+        and user[0].isalpha()
+        and not any(user in sublist for sublist in L)
+    ):
+        print("Valid")
+        return True
+    elif any(user in sublist for sublist in L):
+        print("User Name Exists")
+        return False
+    else:
+        print("Invalid")
+        return False
+
 
 def valid_password(pwd):
     """
@@ -24,6 +39,19 @@ def valid_password(pwd):
     2. Returns if the password is valid → type bool
     """
     # WRITE YOUR CODE BELOW
+    if (
+        len(pwd) >= 10
+        and pwd.isalnum()
+        and pwd != pwd.upper()
+        and pwd != pwd.lower()
+        and not pwd.isalpha()
+    ):
+        print("Valid")
+        return True
+    else:
+        print("Invalid")
+        return False
+
 
 def add_user(L):
     """
@@ -36,13 +64,33 @@ def add_user(L):
     3. Add the username/password pair to the userList and display User created
     """
     # WRITE YOUR CODE BELOW
+    while True:
+        user = input("Enter Username: ")
+        if not valid_username(user, L):
+            continue
+        else:
+            while True:
+                pwd = input("Enter Password: ")
+                if not valid_password(pwd):
+                    continue
+                else:
+                    pwd_a = input("Confirm Password: ")
+                    if pwd_a != pwd:
+                        print("Passwords do not match")
+                        continue
+                    else:
+                        print("User created")
+                        return L.append([user, pwd])
 
 
-    
 # DO NOT CHANGE THE CODE BELLOW
-if __name__ == '__main__':
-    userList = [['sunny1', 'pwd1DdeEff'], ['superS', 'pwD2Abcdefgh'],
-    ['likeA', 'pwd3AAAAAA'], ['qwerty', 'pwd4QWERTY']]
+if __name__ == "__main__":
+    userList = [
+        ["sunny1", "pwd1DdeEff"],
+        ["superS", "pwD2Abcdefgh"],
+        ["likeA", "pwd3AAAAAA"],
+        ["qwerty", "pwd4QWERTY"],
+    ]
 
     add_user(userList)
 
