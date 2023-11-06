@@ -21,11 +21,11 @@ def valid_username(user, L):
         len(user) >= 4
         and user.isalnum()
         and user[0].isalpha()
-        and not any(user in sublist for sublist in L)
+        and not any(user == sublist[0] for sublist in L)
     ):
         print("Valid")
         return True
-    elif any(user in sublist for sublist in L):
+    elif any(user == sublist[0] for sublist in L):
         print("User Name Exists")
         return False
     else:
