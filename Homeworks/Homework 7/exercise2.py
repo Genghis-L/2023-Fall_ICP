@@ -20,8 +20,31 @@ Output: If the file cannot be found, display "File not found".
 
 # Place your imports here if any
 
-def main():
-    """Implement the logic according to instructions"""
 
-if __name__ == '__main__':
+def main():
+    while True:
+        filename = input("Filename: \n")
+        try:
+            f = open(filename, "r")
+        except:
+            print("File not found")  # No File Error
+        else:
+            content = f.readlines()
+            if len(content) == 0:
+                print("Error")  # Empty File Error
+                continue
+            try:
+                for i in range(len(content)):
+                    content[i] = int(content[i])
+            except:
+                print("Error")  # Invalid Data Error
+                continue
+            break
+
+    print(f"Minimum: {min(content)}")
+    print(f"Maximum: {max(content)}")
+    print(f"Average: {sum(content)/len(content):.2f}")  # 2-decimal digit rounding
+
+
+if __name__ == "__main__":
     main()

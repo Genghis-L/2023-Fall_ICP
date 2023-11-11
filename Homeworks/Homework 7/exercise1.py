@@ -14,8 +14,21 @@ After executing your program, only file1.txt will be updated, file2.txt will not
 # Place your imports here if any
 """
 
+
 def main():
     """Implement the logic according to instructions"""
+    f1 = open("file1.txt", "r")  # Read file1
+    c1 = f1.read()
+    f1.close()
 
-if __name__ == '__main__':
+    f2 = open("file2.txt", "r")  # Read file2
+    c2 = f2.read()
+    f2.close()
+
+    f1 = open("file1.txt", "w")  # Rewrite file1
+    f1.write(c2 + c1)
+    f1.close()
+
+
+if __name__ == "__main__":
     main()
