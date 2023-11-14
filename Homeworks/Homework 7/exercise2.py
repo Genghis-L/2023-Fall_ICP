@@ -23,7 +23,7 @@ Output: If the file cannot be found, display "File not found".
 
 def main():
     while True:
-        filename = input("Filename: \n")
+        filename = input("Filename:\n")
         try:
             f = open(filename, "r")
         except:
