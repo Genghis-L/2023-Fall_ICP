@@ -1,0 +1,3 @@
+101,John Smith,85
+102,Jane Doe,92
+103,Michael Johnson,78
