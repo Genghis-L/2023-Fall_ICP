@@ -1,0 +1,51 @@
+def matrix_to_dict(mtrx):
+    d = {}
+    for i, m in enumerate(mtrx):
+        for j, n in enumerate(m):
+            if n != 0:
+                d[(i, j)] = n
+            else:
+                continue
+    return d
+
+
+def sum_row_dict(dict, r):
+    sum_r = 0
+    for i, j in dict.items():
+        if i[0] == r:
+            sum_r += j
+    return sum_r
+
+
+def sum_column_dict(dict, c):
+    sum_c = 0
+    for i, j in dict.items():
+        if i[1] == c:
+            sum_c += j
+    return sum_c
+
+
+def dict_to_transpose_mtrx(dict, r, c):
+    mtrx = []
+    for i in range(r):
+        for j in range(c):
+            if (i, j) not in dict.keys():
+                dict[(i, j)] = 0
+    for i in range(c):
+        m = []
+        for p, q in dict.items():
+            if p[1] == i:
+                m.append(q)
+        mtrx.append(m)
+    return mtrx
+
+
+matrix34 = [[2.5, 0, 4.0, 1.5], [1.5, 0, 2.0, 0], [2.5, 0, 4.0, 1.5]]
+dict = matrix_to_dict(matrix34)
+r = 2
+c = 2
+
+print(dict)
+print(sum_row_dict(dict, r))
+print(sum_column_dict(dict, c))
+print(dict_to_transpose_mtrx(dict, 3, 4))
